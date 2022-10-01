@@ -3,7 +3,7 @@ import turtle
 import urllib.request
 import time
 
-metric_imperial = True
+metric_imperial = False
 
 def position():
     url = "https://api.wheretheiss.at/v1/satellites/25544"
@@ -13,7 +13,7 @@ def position():
     if metric_imperial:
         lat = result['latitude']
         lon = result['longitude']
-        alt = result['altitude']/1.6
+        alt = result['altitude']*0.62137119
     else:
         lat = result['latitude']
         lon = result['longitude']
@@ -31,11 +31,17 @@ response = urllib.request.urlopen(url)
 result = json.loads(response.read())
 
 file = open("iss.txt", "w")
-file.write("There are currently " +
-           str(result["number"]) + " astronauts on the ISS: \n\n")
+
 people = result["people"]
+counter = 0
+text = ""
 for p in people:
-    file.write(p['name'] + " - on board" + "\n")
+    if p["craft"] == "ISS":
+        counter+=1
+        text+= p['name'] + " - on board" + "\n"
+file.write("There are currently " +
+           str(counter) + " astronauts on the ISS: \n\n")
+file.write(text)
 
 lat,lon,alt = position()
 
