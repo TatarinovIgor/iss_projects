@@ -20,7 +20,7 @@ def tracker_2d():
 
 
 @app.route('/tracker-3d')
-def tracker_2d():
+def tracker_3d():
     return render_template("tracker3d.html")
 
 
