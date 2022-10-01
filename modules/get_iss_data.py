@@ -48,7 +48,7 @@ for p in people:
 
 lat,lon,alt,vel = position()
 
-text=text[:-1]+'], "latitude" : '+str(lat)+', "longitude" : '+str(lon)+', "altitude" : '+str(alt)+', "velocity" : '+str(vel)+', "velocity unit" : '+velocity_unit+', "altitude unit" : '+altitude_unit+'}'
+text=text[:-1]+'], "number" : '+str(counter)+', "latitude" : '+str(lat)+', "longitude" : '+str(lon)+', "altitude" : '+str(alt)+', "velocity" : '+str(vel)+', "velocity unit" : '+velocity_unit+', "altitude unit" : '+altitude_unit+'}'
 
 
 file.write(text)
@@ -73,7 +73,7 @@ while True:
 
 
     # Extract the ISS location
-    lat,lon,alt = position()
+    lat,lon,alt,vel = position()
 
     # Ouput lon and lat to the terminal
     print("\nLatitude: " + str(lat))
