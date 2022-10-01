@@ -15,3 +15,8 @@ p {
     font-size: 1.2em;
     color: DarkSlateGray;
     }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}

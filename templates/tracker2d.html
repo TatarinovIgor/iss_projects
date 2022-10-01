@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href='/static/sidebar.css' />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<title>Sidebar Menu | Side Navigation Bar</title>-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <iframe src="https://isstracker.pl/en/widget/map?&disableInfoBox=0&lang=en&z=4&mapType=satellite&units=metric&preloader=1&showSatToolti&disableInfoBox=1&lang=en&z=5&mapType=satellite&units=metric&preloader=1&showSatTooltip=1&dayNightLayer=1&showFutureOrbit=1&dayNightLayer=1&showFutureOrbit=1" scrolling="auto" allowtransparency="true" name="main" style="width:100%;height:100%;"></iframe>
+    <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">ISS Tracker</span>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <!-- <i class="bx bx-menu menu-icon"></i> -->
+          <span class="logo-name">ISS Tracker</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-home-alt icon"></i> -->
+                <span class="link">2D Tracking</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-bar-chart-alt-2 icon"></i> -->
+                <span class="link">3D Tracking</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-bell icon"></i> -->
+                <span class="link">About ISS</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-message-rounded icon"></i> -->
+                <span class="link">Credits</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="overlay"></section>
+
+    <script>
+      const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".overlay");
+
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>
+
