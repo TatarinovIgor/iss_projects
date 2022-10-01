@@ -18,5 +18,11 @@ def map():
 def tracker_2d():
     return render_template("tracker2d.html")
 
+
+@app.route('/tracker-3d')
+def tracker_2d():
+    return render_template("tracker3d.html")
+
+
 if __name__ == "__main__":
     app.run()
