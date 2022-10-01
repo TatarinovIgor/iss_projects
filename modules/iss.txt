@@ -14,4 +14,4 @@ Sergey Prokopyev - on board
 Dmitry Petelin - on board
 Frank Rubio - on board
 
-Your current lat / long is: [35.1753, 33.3642]
+Your current lat / long / alt is:-10.495830580838, -179.41859019332, 419.02725545183

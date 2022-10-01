@@ -2,8 +2,6 @@ import json
 import turtle
 import urllib.request
 import time
-import webbrowser
-import geocoder
 
 #get the ampunt of astronauts on the iss
 url = "http://api.open-notify.org/astros.json"
@@ -16,6 +14,16 @@ file.write("There are currently " +
 people = result["people"]
 for p in people:
     file.write(p['name'] + " - on board" + "\n")
+
+url = "https://api.wheretheiss.at/v1/satellites/25544"
+response = urllib.request.urlopen(url)
+result = json.loads(response.read())
+
+lat = result['latitude']
+lon = result['longitude']
+alt = result['altitude']
+
+file.write("\nYour current lat / long / alt is:"+str(lat)+", "+str(lon)+", "+str(alt)+"\n")
 file.close()
 
 
@@ -43,8 +51,6 @@ while True:
     alt = result['altitude']
 
     # Ouput lon and lat to the terminal
-    lat = float(lat)
-    lon = float(lon)
     print("\nLatitude: " + str(lat))
     print("\nLongitude: " + str(lon))
     print("\nAltitude: " + str(alt))
