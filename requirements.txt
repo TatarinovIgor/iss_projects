@@ -1,0 +1,4 @@
+Flask==2.2.2
+geocoder==1.38.1
+tutle==1.2.2
+urllib3==1.26.5
