@@ -21,7 +21,7 @@ def tracker_2d():
 
 @app.route('/tracker-3d')
 def tracker_3d():
-    return render_template("3d_tracker/tracker3d.html")
+    return render_template("/3d_tracker/tracker3d.html")
 
 
 if __name__ == "__main__":
