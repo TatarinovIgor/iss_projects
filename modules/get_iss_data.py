@@ -14,16 +14,22 @@ def position():
         lat = result['latitude']
         lon = result['longitude']
         alt = result['altitude']*0.62137119
+        vel = result['velocity']*0.62137119
     else:
         lat = result['latitude']
         lon = result['longitude']
         alt = result['altitude']
-    return lat,lon,alt
+        vel = result['velocity']
+    return lat,lon,alt,vel
 
 if metric_imperial:
     system = "miles"
+    altitude_unit = '"miles"'
+    velocity_unit = '"miles/hours"'
 else:
     system = "kilometers"
+    velocity_unit = '"kilometers/hours"'
+    altitude_unit = '"kilometers"'
 
 #get the ampunt of astronauts on the iss
 url = "http://api.open-notify.org/astros.json"
@@ -34,18 +40,19 @@ file = open("iss.txt", "w")
 
 people = result["people"]
 counter = 0
-text = ""
+text = '{"people" : ['
 for p in people:
     if p["craft"] == "ISS":
         counter+=1
-        text+= p['name'] + " - on board" + "\n"
-file.write("There are currently " +
-           str(counter) + " astronauts on the ISS: \n\n")
+        text+='{"name" : '+'"'+p['name']+'"'+'},'
+
+lat,lon,alt,vel = position()
+
+text=text[:-1]+'], "latitude" : '+str(lat)+', "longitude" : '+str(lon)+', "altitude" : '+str(alt)+', "velocity" : '+str(vel)+', "velocity unit" : '+velocity_unit+', "altitude unit" : '+altitude_unit+'}'
+
+
 file.write(text)
-
-lat,lon,alt = position()
-
-file.write("\nYour current lat / long / alt is:"+str(lat)+", "+str(lon)+", "+str(alt)+" "+system+"\n")
+#file.write("\nYour current lat / long / alt is:"+str(lat)+", "+str(lon)+", "+str(alt)+" "+system+"\n")
 file.close()
 
 

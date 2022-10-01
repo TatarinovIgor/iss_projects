@@ -1,14 +1,1 @@
-There are currently 10 astronauts on the ISS: 
-
-Oleg Artemyev - on board
-Denis Matveev - on board
-Sergey Korsakov - on board
-Kjell Lindgren - on board
-Bob Hines - on board
-Samantha Cristoforetti - on board
-Jessica Watkins - on board
-Sergey Prokopyev - on board
-Dmitry Petelin - on board
-Frank Rubio - on board
-
-Your current lat / long / alt is:-39.220036917198, -174.05862439999, 427.85749660723 kilometers
+{"people" : [{"name" : "Oleg Artemyev"},{"name" : "Denis Matveev"},{"name" : "Sergey Korsakov"},{"name" : "Kjell Lindgren"},{"name" : "Bob Hines"},{"name" : "Samantha Cristoforetti"},{"name" : "Jessica Watkins"},{"name" : "Sergey Prokopyev"},{"name" : "Dmitry Petelin"},{"name" : "Frank Rubio"}], "latitude" : -48.007538399725, "longitude" : 158.60909262374, "altitude" : 430.95505146485, "velocity" : 27551.615470765, "velocity unit" : "kilometers/hours", "altitude unit" : "kilometers"}
