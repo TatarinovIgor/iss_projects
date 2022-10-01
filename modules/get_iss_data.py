@@ -3,6 +3,28 @@ import turtle
 import urllib.request
 import time
 
+metric_imperial = True
+
+def position():
+    url = "https://api.wheretheiss.at/v1/satellites/25544"
+    response = urllib.request.urlopen(url)
+    result = json.loads(response.read())
+
+    if metric_imperial:
+        lat = result['latitude']
+        lon = result['longitude']
+        alt = result['altitude']/1.6
+    else:
+        lat = result['latitude']
+        lon = result['longitude']
+        alt = result['altitude']
+    return lat,lon,alt
+
+if metric_imperial:
+    system = "miles"
+else:
+    system = "kilometers"
+
 #get the ampunt of astronauts on the iss
 url = "http://api.open-notify.org/astros.json"
 response = urllib.request.urlopen(url)
@@ -15,15 +37,9 @@ people = result["people"]
 for p in people:
     file.write(p['name'] + " - on board" + "\n")
 
-url = "https://api.wheretheiss.at/v1/satellites/25544"
-response = urllib.request.urlopen(url)
-result = json.loads(response.read())
+lat,lon,alt = position()
 
-lat = result['latitude']
-lon = result['longitude']
-alt = result['altitude']
-
-file.write("\nYour current lat / long / alt is:"+str(lat)+", "+str(lon)+", "+str(alt)+"\n")
+file.write("\nYour current lat / long / alt is:"+str(lat)+", "+str(lon)+", "+str(alt)+" "+system+"\n")
 file.close()
 
 
@@ -41,14 +57,10 @@ iss.penup()
 
 while True:
     # load the current status of the ISS in real-time
-    url = "https://api.wheretheiss.at/v1/satellites/25544"
-    response = urllib.request.urlopen(url)
-    result = json.loads(response.read())
+
 
     # Extract the ISS location
-    lat = result['latitude']
-    lon = result['longitude']
-    alt = result['altitude']
+    lat,lon,alt = position()
 
     # Ouput lon and lat to the terminal
     print("\nLatitude: " + str(lat))
