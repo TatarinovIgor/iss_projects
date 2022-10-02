@@ -398,7 +398,6 @@ function getJSON(url, success) {
 
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
-
 }
 
 // Grab ISS position.
