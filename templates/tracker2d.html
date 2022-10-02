@@ -13,9 +13,11 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/static/table.css">
+
   </head>
   <body>
-    <iframe src="https://isstracker.pl/en/widget/map?&disableInfoBox=0&lang=en&z=4&mapType=satellite&units=metric&preloader=1&showSatToolti&disableInfoBox=1&lang=en&z=5&mapType=satellite&units=metric&preloader=1&showSatTooltip=1&dayNightLayer=1&showFutureOrbit=1&dayNightLayer=1&showFutureOrbit=1" scrolling="auto" allowtransparency="true" name="main" style="width:100%;height:100%;"></iframe>
+    <iframe src="https://isstracker.pl/en/widget/map?&disableInfoBox=0&lang=en&z=4&mapType=satellite&units=metric&preloader=1&showSatToolti&disableInfoBox=1&lang=en&z=5&mapType=satellite&units=metric&preloader=1&showSatTooltip=1&dayNightLayer=1&showFutureOrbit=1&dayNightLayer=1&showFutureOrbit=1" scrolling="auto" allowtransparency="true" name="main" style="width:100%;height:90%;"></iframe>
     <nav>
       <div class="logo">
         <i class="bx bx-menu menu-icon"></i>
@@ -75,6 +77,26 @@
         navBar.classList.remove("open");
       });
     </script>
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th><h1>Lat</h1></th>
+                <th><h1>Lon</h1></th>
+                <th><h1>Alt</h1></th>
+                <th><h1>Vel</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{lat}}</td>
+                <td>{{lon}}</td>
+                <td>{{alt}}</td>
+                <td>01:32:50</td>
+            </tr>
+        </tbody>
+    </table>
+
   </body>
 </html>
 
