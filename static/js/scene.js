@@ -56,19 +56,19 @@ var getEarthRotation = function() {
 }
 
 function localGetJSON(url, success) {
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0]
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
+    var soil = new XMLHttpRequest();
+    soil.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    data = JSON.parse(this.responseText)
+      result = {
+	    "iss_position": {
+		    "latitude": parseFloat(data.iss_position.latitude),
+		    "longitude": parseFloat(data.iss_position.longitude),}}
+      success(result);
+      }
     };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
+   soil.open("GET", url, false);
+   soil.send(null);
 }
 
 // Set the initial ISS position.
