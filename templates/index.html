@@ -1,27 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href='/static/main.css' />
-    <link rel="stylesheet" href='/static/tracker2d.css' />
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="/static/landing-assets/css/main.css">
+</head>
+<body>
 
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/static/table.css">
-  </head>
-  <body>
-    <div id='gray_overlay'>
-    <!--   <img class='logo' src='https://contentservice.mc.reyrey.net/image_v1.0.0/?id=c9ceb603-bb5d-53fc-b9a9-c0115952cc4c&637601349133269119'> -->
-      <img class='img2' src='https://contentservice.mc.reyrey.net/image_v1.0.0/?id=8e75863f-dca7-5063-a399-1825b1e953e4&637599760715686463'>
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>About</span></li>
+            <li><span>Contact</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>ISS tracking <br> project for <br> NASA</h1>
+                <img src="/static/landing-assets/img/introduction-visual.png" alt="Welcome">
+              </div>
+            </div>
+          </li>
+
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>About ISS</h2>
+                <a href="#0">International Space Station (ISS) <br> a manned orbital station used as a multi-purpose space <br> research facility; operated from the end of 1998 to the <br> present (the countries have agreed on the operation <br> until 2024 inclusive, an extension of the operation <br> period until 2028 or 2030 is being considered).
+                </a>
+                <!-- <img src="/static/landing-assets/img/iss-background.png" alt="About ISS" style=""> -->
+              </div>
+              <div class="about--options">
+                <a href="https://www.nasa.gov/mission_pages/station/main/index.html">
+                  <h3>More from NASA</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <div class="modal--information">
+                    <p>Track ISS with us</p>
+                  </div>
+                  <ul class="modal--options">
+                    <li><a href="/tracker-2d">2D Tracking</a></li>
+                    <li><a href="/tracker-3d">3D Tracking</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Works</li>
+    <li>About</li>
+    <li>Track</li>
+  </ul>
+</div>
 
-    <div id='gray_overlayy'>
-      <img class='img2' src='https://contentservice.mc.reyrey.net/image_v1.0.0/?id=8e75863f-dca7-5063-a399-1825b1e953e4&637599760715686463'>
-    </div>
-
-  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/static/landing-assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="/static/landing-assets/js/functions-min.js"></script>
+</body>
 </html>
