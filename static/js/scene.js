@@ -73,7 +73,7 @@ function localGetJSON(url, success) {
 
 // Set the initial ISS position.
 var setISSPosition = function() {
-  localGetJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
+  localGetJSON("https://request-iss-data.herokuapp.com/", function( result ) {
 
     // Set the latitude position.
     issXX = issRadius * Math.cos(result.iss_position.latitude * Math.PI/180);
@@ -372,7 +372,7 @@ function animate() {
 
 function loadJSON(file, callback) {
   var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/jsonp");
+  xobj.overrideMimeType("application/json");
   xobj.open('GET', file, true);
   xobj.onreadystatechange = function () {
     if (xobj.readyState == 4 && xobj.status == "200") {
@@ -387,7 +387,7 @@ function loadJSON(file, callback) {
 
 // Grab ISS position.
 setInterval(function() {
-  localGetJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
+  localGetJSON("https://request-iss-data.herokuapp.com/", function( result ) {
 
     // Set the latitude position.
     issXX = issRadius * Math.cos(result.iss_position.latitude * Math.PI/180);
