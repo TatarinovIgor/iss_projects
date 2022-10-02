@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href='Igor.css' />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+   href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+   rel="stylesheet"
+  />
+
+  <title>About ISS</title>
+  <meta name="description" content="About ISS">
+
+</head>
+
+<body>
+  <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">ISS Tracker</span>
+      </div>
+      <div class="ISS-logo-box">
+        <a class="logo-link" href="https://iss-tracker-by-space-cats.herokuapp.com/tracker-3d" target="_blank">
+         <img class="pic-with-link" src="logo_monochrome.png">
+        </a>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <!-- <i class="bx bx-menu menu-icon"></i> -->
+          <span class="logo-name">ISS Tracker</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="tracker-2d" class="nav-link" target="_blank">
+                <!-- <i class="bx bx-home-alt icon"></i> -->
+                <span class="link">2D Tracking</span>
+                <img src="2d-logo.png">
+              </a>
+            </li>
+            <li class="list">
+              <a href="tracker-3d" class="nav-link" target="_blank">
+                <!-- <i class="bx bx-bar-chart-alt-2 icon"></i> -->
+                <span class="link">3D Tracking</span>
+                <img class="logo-for-3d" src="3d-icon.png">
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link" target="_blank">
+                <!-- <i class="bx bx-bell icon"></i> -->
+                <span class="link">About ISS</span>
+                <img src="about-logo.png" class="about-logo">
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link" target="_blank">
+                <!-- <i class="bx bx-message-rounded icon"></i> -->
+                <span class="link">Credits</span>
+                <img src="team-logo.png">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        
+
+
+      </div>
+    </nav>
+    <div class="intro">
+      <h1>All you need to know about ISS</h1>
+    </div>
+    
+
+    <img class="gps" src="GPS.png">
+    <img class="about-1" src="about_ISS.png">
+    <img class="about-2" src="about_ISS_2.png">
+    <section class="overlay"></section>
+
+    <script>
+      const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".overlay");
+
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+      });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family:'Montserrat', sans-serif;;
+}
+
+html{
+    padding: 0;
+    margin: 0px;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: #1f487e;
+}
+
+.ISS-logo{
+    width: 64px;
+    height: 64px;
+}
+
+
+.comp-name{
+    margin-left:40px;
+    margin-bottom: 20;
+    color: white;
+    justify-self: left;
+}
+
+.welcome-text{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 300px;
+}
+
+.testing-css{
+    color: lightgreen;
+}
+
+a{
+    color: white;
+    padding-right: 30px;
+    justify-self: flex-end;
+}
+
+nav{
+    align-self: center;
+
+}
+
+.gps, .about-1, .about-2{
+    width: 100%;
+}
+
+.logo-link{
+    align-self: center;
+    justify-self: center;
+}
+
+.logo .menu-icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 14px;
+    cursor: pointer;

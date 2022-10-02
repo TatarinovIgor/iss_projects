@@ -1,0 +1,171 @@
+body {
+    background: #1f487e;
+    margin: 0;
+    padding: 0;}
+  
+  /* Google Fonts - Poppins */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    min-height: 100%;
+    background-color: transparent;
+  }
+  
+  html, body {
+      margin: 0;
+      height: 100%;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background: #1f487e;
+  }
+  nav .logo {
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+  }
+  .logo .menu-icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 14px;
+    cursor: pointer;
+  }
+  .logo .logo-name {
+    color: #E5E5E5;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  nav .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 260px;
+    padding: 20px 0;
+    background-color: #1f487e;
+    transition: all 0.4s ease;
+  }
+  nav.open .sidebar {
+    left: 0;
+  }
+
+  .intro{
+    display: flex;
+    margin-top: 90px;
+    justify-content: center;
+  }
+  .sidebar .sidebar-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+  }
+  .sidebar-content .list {
+    list-style: none;
+  }
+  .list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 0px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .lists .nav-link:hover {
+    background-color: white;
+  }
+  .nav-link .icon {
+    margin-right: 0px;
+    font-size: 20px;
+    color: white;
+  }
+  .nav-link .link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 400;
+  }
+  .lists .nav-link:hover .icon,
+  .lists .nav-link:hover .link {
+    color: #1f487e;
+  } 
+
+ .gps, .about-1, .about-2{
+    width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.open ~ .overlay {
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
+}
+
+.ISS-logo-box{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-link{
+  justify-self: flex-end;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+}
+
+.pic-with-link{
+  width: 52px;
+  height: 52px;
+  align-self: center;
+}
+
+.logo-for-2d{
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+}
+
+.logo-for-3d{
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+}
+
+.about-logo{
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+}
+
+.team-logo{
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+}
