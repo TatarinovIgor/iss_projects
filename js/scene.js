@@ -1,16 +1,4 @@
-/**
- * @file
- * The main scene.
- */
 
-/**
- * @file
- * The main scene.
- */
-
-/**
- * Define constants.
- */
 const TEXTURE_PATH = './assets/textures/';
 
 /**

@@ -123,7 +123,6 @@ var Stats = function () {
     },
 
     end: function () {
-
       var time = now();
 
       ms = time - startTime;
@@ -146,9 +145,7 @@ var Stats = function () {
 
         prevTime = time;
         frames = 0;
-
         if ( mem !== undefined ) {
-
           var heapSize = performance.memory.usedJSHeapSize;
           var heapSizeLimit = performance.memory.jsHeapSizeLimit;
 
@@ -158,27 +155,16 @@ var Stats = function () {
 
           memText.textContent = mem + ' MB (' + memMin + '-' + memMax + ')';
           updateGraph( memGraph, heapSize / heapSizeLimit );
-
         }
-
       }
-
       return time;
-
     },
-
     update: function () {
-
       startTime = this.end();
-
     }
-
   };
-
 };
 
 if ( typeof module === 'object' ) {
-
   module.exports = Stats;
-
 }
