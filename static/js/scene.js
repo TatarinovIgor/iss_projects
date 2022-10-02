@@ -396,7 +396,6 @@ function getJSON(url, success) {
         success && success(data);
     };
 
-    script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
 }
 
