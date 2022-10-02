@@ -66,6 +66,7 @@ def tracker_2d():
 
     return render_template("tracker2d.html", data=data)
 
+
 @app.route('/tracker-3d')
 def tracker_3d():
     return render_template("tracker3d.html")

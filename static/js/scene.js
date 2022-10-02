@@ -55,25 +55,9 @@ var getEarthRotation = function() {
   return degrees;
 }
 
-function localGetJSON(url, success) {
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0]
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
-}
-
 // Set the initial ISS position.
 var setISSPosition = function() {
-  localGetJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
+  $.getJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
 
     // Set the latitude position.
     issXX = issRadius * Math.cos(result.iss_position.latitude * Math.PI/180);
@@ -384,10 +368,9 @@ function loadJSON(file, callback) {
   xobj.send(null);
 }
 
-
 // Grab ISS position.
 setInterval(function() {
-  localGetJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
+  $.getJSON("http://api.open-notify.org/iss-now.json?callback=?", function( result ) {
 
     // Set the latitude position.
     issXX = issRadius * Math.cos(result.iss_position.latitude * Math.PI/180);
