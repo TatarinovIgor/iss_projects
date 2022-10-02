@@ -38,6 +38,15 @@ else:
 
 @app.route('/')
 def output():
+
+
+@app.route('/map')
+def map():
+    return render_template("map.html")
+
+
+@app.route('/tracker-2d')
+def tracker_2d():
     # get the ampunt of astronauts on the iss
     url = "http://api.open-notify.org/astros.json"
     response = urllib.request.urlopen(url)
@@ -55,17 +64,6 @@ def output():
     data = {'lat': lat, 'lon': lon, 'alt': alt, 'vel': vel}
 
     return render_template("tracker2d.html", data=data)
-
-
-@app.route('/map')
-def map():
-    return render_template("map.html")
-
-
-@app.route('/tracker-2d')
-def tracker_2d():
-    return render_template("tracker2d.html")
-
 
 @app.route('/tracker-3d')
 def tracker_3d():
