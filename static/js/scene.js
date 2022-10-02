@@ -66,9 +66,8 @@ function localGetJSON(url, success) {
         success && success(data);
     };
 
-    script.src = url.replace();
+    script.src = url.replace('callback=?', '');
     head.appendChild(script);
-
 }
 
 // Set the initial ISS position.
