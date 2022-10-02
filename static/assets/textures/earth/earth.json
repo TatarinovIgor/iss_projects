@@ -1,0 +1,11 @@
+{
+  "name": "earth",
+  "image": "static/assets/textures/earth/ColorMap.jpg",
+  "bump": "static/assets/textures/earth/Bump.jpg",
+  "spec": "static/assets/textures/earth/SpecMask.jpg",
+  "sizeX": "1",
+  "sizeY": "1",
+  "shininess": "5",
+  "specular": "#555555",
+  "color": "#ffffff"
+}

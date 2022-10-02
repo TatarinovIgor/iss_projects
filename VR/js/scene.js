@@ -11,7 +11,7 @@
 /**
  * Define constants.
  */
-const TEXTURE_PATH = '../assets/textures/';
+const TEXTURE_PATH = '/static/VR/assets/textures/';
 
 /**
  * Create the animation request.
@@ -167,7 +167,7 @@ function init() {
   var geometryCloud = new THREE.SphereGeometry( earthRadius + 1, 64, 64 );
 
   loader = new THREE.TextureLoader();
-  var alpha = loader.load( "../assets/textures/earth/alphaMap.jpg" );
+  var alpha = loader.load( "/static/VR/assets/textures/earth/alphaMap.jpg" );
   alpha.anisotropy = renderer.getMaxAnisotropy();
   alpha.wrapS = alpha.wrapT = THREE.RepeatWrapping;
   alpha.repeat.set( 1, 1 );
@@ -184,7 +184,7 @@ function init() {
 
   // Create glow effect. I got this from http://stemkoski.github.io/Three.js/Simple-Glow.html.
   var spriteMaterial = new THREE.SpriteMaterial({
-    map: new THREE.ImageUtils.loadTexture( '../assets/textures/earth/glow.png' ),
+    map: new THREE.ImageUtils.loadTexture( '/static/VR/assets/textures/earth/glow.png' ),
     color: 0x0099ff,
     transparent: false,
     blending: THREE.AdditiveBlending
@@ -194,7 +194,7 @@ function init() {
   sphereCloud.add(sprite);
 
   // Add the skymap.
-  var urlPrefix = "../assets/skymap/";
+  var urlPrefix = "/static/VR/assets/skymap/";
   var urls = [
     urlPrefix + 'top.jpg', // right
     urlPrefix + 'bottom.jpg', // left

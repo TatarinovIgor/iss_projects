@@ -1,5 +1,5 @@
 
-const TEXTURE_PATH = './assets/textures/';
+const TEXTURE_PATH = '/static/assets/textures/';
 
 /**
  * Create the animation request.
@@ -240,7 +240,7 @@ function init() {
   var geometryCloud = new THREE.SphereGeometry( earthRadius + 0.2, 128, 128 );
 
   loader = new THREE.TextureLoader();
-  var alpha = loader.load( "./assets/textures/earth/alphaMap.jpg" );
+  var alpha = loader.load( "/static/assets/textures/earth/alphaMap.jpg" );
 
   var materialCloud = new THREE.MeshPhongMaterial({
     alphaMap: alpha,
@@ -253,7 +253,7 @@ function init() {
 
   // Create glow effect. I got this from http://stemkoski.github.io/Three.js/Simple-Glow.html.
   var spriteMaterial = new THREE.SpriteMaterial({
-    map: new THREE.ImageUtils.loadTexture( './assets/textures/earth/glow.png' ),
+    map: new THREE.ImageUtils.loadTexture( '/static/assets/textures/earth/glow.png' ),
     color: 0x0099ff,
     transparent: false,
     blending: THREE.AdditiveBlending
@@ -277,7 +277,7 @@ function init() {
   iss.add( spotLight );
 
   // Add the skymap.
-  var urlPrefix = "./assets/skymap/";
+  var urlPrefix = "/static/assets/skymap/";
   var urls = [
     urlPrefix + 'test.jpg', //'top.jpg', // top
     urlPrefix + 'test.jpg', //'bottom.jpg', // bottom

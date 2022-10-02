@@ -4,23 +4,91 @@
 <head>
   <meta charset="utf-8">
 
-  <title>VR Development</title>
-  <meta name="description" content="ISS Position">
-  <meta name="author" content="Bryan Jones">
+  <link rel="stylesheet" href='/static/tracker3d.css' />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+   href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+   rel="stylesheet"
+  />
 
-  <link rel="stylesheet" type="text/css" href="/static/styles.css">
+  <title>ISS 3d position</title>
+  <meta name="description" content="ISS Position">
+
 </head>
 
 <body>
   <div id="container"></div>
   <!-- Third party code -->
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="js/thirdParty/three.min.js"></script>
-  <script src="js/thirdParty/DeviceOrientationControls.js"></script>
-  <script src="js/thirdParty/OrbitControls.js"></script>
-  <script src="js/thirdParty/stats.js"></script>
+  <script src="/static/js/thirdParty/three.min.js"></script>
+  <script src="/static/js/thirdParty/DeviceOrientationControls.js"></script>
+  <script src="/static/js/thirdParty/OrbitControls.js"></script>
+  <script src="/static/js/thirdParty/stats.js"></script>
 
   <!-- The main scene -->
-  <script src="js/scene.js"></script>
+  <script src="/static/js/scene.js"></script>
+
+  <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">ISS Tracker</span>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <!-- <i class="bx bx-menu menu-icon"></i> -->
+          <span class="logo-name">ISS Tracker</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="tracker-2d" class="nav-link">
+                <!-- <i class="bx bx-home-alt icon"></i> -->
+                <span class="link">2D Tracking</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="tracker-3d" class="nav-link">
+                <!-- <i class="bx bx-bar-chart-alt-2 icon"></i> -->
+                <span class="link">3D Tracking</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-bell icon"></i> -->
+                <span class="link">About ISS</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <!-- <i class="bx bx-message-rounded icon"></i> -->
+                <span class="link">Credits</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="overlay"></section>
+
+    <script>
+      const navBar = document.querySelector("nav"),
+        menuBtns = document.querySelectorAll(".menu-icon"),
+        overlay = document.querySelector(".overlay");
+
+      menuBtns.forEach((menuBtn) => {
+        menuBtn.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        navBar.classList.remove("open");
+      });
+    </script>
+
 </body>
 </html>
