@@ -68,6 +68,7 @@ function localGetJSON(url, success) {
 
     script.src = url.replace('callback=?', 'callback=' + ud);
     head.appendChild(script);
+
 }
 
 // Set the initial ISS position.
@@ -403,4 +404,3 @@ setInterval(function() {
     issY = issY * (Math.PI/180);
   });
 }, 3000);
-
