@@ -38,6 +38,7 @@ else:
 
 @app.route('/')
 def output():
+    return render_template("index.html")
 
 
 @app.route('/map')
