@@ -11,8 +11,6 @@ def result():
    if request.method == 'POST':
       result = request.form
       return render_template("result.html",result = result)
-   else:
-      return "hello"
 
 
 if __name__ == '__main__':
