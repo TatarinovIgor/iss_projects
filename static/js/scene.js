@@ -279,13 +279,21 @@ function init() {
   sphereCloud.add(sprite);
 
   // Add the ISS.
-  var issGeometry = new THREE.SphereGeometry( 2, 8, 8 );
+  loader.load('/static/assets/iss/ISS.glb', function(gltf){
+    iss = gltf.scene.children[0];
+    scene.add(gltf.scene);
+    iss.scale.set(0.5,0.5,0.5);
+    iss.position.set(0,0,issRadius);
+    issRotationPoint.add(iss);
+  });
+  /*var issGeometry = new THREE.SphereGeometry( 2, 8, 8 );
   var issMaterial = new THREE.MeshLambertMaterial({
     color: 0xff0000
   });
   iss = new THREE.Mesh( issGeometry, issMaterial );
   iss.position.set( 0, 0, issRadius );
   issRotationPoint.add(iss);
+  */
 
   // Create a spot light and attach it to the station.
   var spotLight = new THREE.SpotLight( 0xffffff, 1, 100, 3 * Math.PI/2);
