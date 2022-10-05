@@ -279,7 +279,7 @@ function init() {
   sphereCloud.add(sprite);
 
   // Add the ISS.
-  loader.load('/static/assets/iss/cube.glb', function(gltf){
+  loader.load('/static/assets/iss/ISS.glb', function(gltf){
     iss = gltf.scene.children[0];
     scene.add(gltf.scene);
     iss.scale.set(0.5,0.5,0.5);
