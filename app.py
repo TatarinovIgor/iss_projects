@@ -71,6 +71,10 @@ def tracker_2d():
 def tracker_3d():
     return render_template("tracker3d.html")
 
+@app.route('/test-3d')
+def test_3d():
+    return render_template("test.html")
+
 
 if __name__ == "__main__":
     app.run()

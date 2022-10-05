@@ -1470,7 +1470,7 @@
  * @pailhead
  */
 
-
+    /*
 	class GLTFMeshStandardSGMaterial extends THREE.MeshStandardMaterial {
 
 		constructor( params ) {
@@ -1607,7 +1607,7 @@
 		}
 
 	}
-
+    */
 	class GLTFMaterialsPbrSpecularGlossinessExtension {
 
 		constructor() {
@@ -1723,7 +1723,7 @@
 	// Spline Interpolation
 	// Specification: https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#appendix-c-spline-interpolation
 
-
+    /*
 	class GLTFCubicSplineInterpolant extends THREE.Interpolant {
 
 		constructor( parameterPositions, sampleValues, sampleSize, resultBuffer ) {
@@ -1789,9 +1789,9 @@
 		}
 
 	}
-
+    */
 	const _q = new THREE.Quaternion();
-
+    /*
 	class GLTFCubicSplineQuaternionInterpolant extends GLTFCubicSplineInterpolant {
 
 		interpolate_( i1, t0, t, t1 ) {
@@ -1805,6 +1805,7 @@
 		}
 
 	}
+	*/
 	/*********************************/
 
 	/********** INTERNALS ************/

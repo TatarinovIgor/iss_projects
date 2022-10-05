@@ -231,7 +231,7 @@ function init() {
 
     var spec = null;
     spec = loader.load( materialJSON.spec );
-
+    /*
     var material = new THREE.MeshPhongMaterial({
       color: materialJSON.color,
       shininess: parseInt(materialJSON.shininess),
@@ -239,8 +239,9 @@ function init() {
       specularMap: spec,
       specular: "#666666",
       bumpMap: bump,
-    });
 
+    });
+    */
     sphere = new THREE.Mesh( geometry, material );
     sphere.position.set( 0, 0, 0 );
     sphere.rotation.y = Math.PI;
@@ -279,14 +280,17 @@ function init() {
   sphereCloud.add(sprite);
 
   // Add the ISS.
+
   loader.load('/static/assets/iss/cube.glb', function(gltf){
     iss = gltf.scene.children[0];
     scene.add(gltf.scene);
-    iss.scale.set(0.5,0.5,0.5);
+    iss.scale.set(1,1,1);
     iss.position.set(0,0,issRadius);
     issRotationPoint.add(iss);
   });
-  /*var issGeometry = new THREE.SphereGeometry( 2, 8, 8 );
+
+  /*
+  var issGeometry = new THREE.SphereGeometry( 2, 8, 8 );
   var issMaterial = new THREE.MeshLambertMaterial({
     color: 0xff0000
   });
@@ -296,9 +300,9 @@ function init() {
   */
 
   // Create a spot light and attach it to the station.
-  var spotLight = new THREE.SpotLight( 0xffffff, 1, 100, 3 * Math.PI/2);
-  spotLight.position.set( 0, 0, 0 );
-  iss.add( spotLight );
+  //var spotLight = new THREE.SpotLight( 0xffffff, 1, 100, 3 * Math.PI/2);
+  //spotLight.position.set( 0, 0, 0 );
+  //iss.add( spotLight );
 
   // Add the skymap.
   var urlPrefix = "/static/assets/skymap/";
@@ -373,7 +377,7 @@ function render() {
 function animate() {
   requestAnimationFrame(animate);
   stats.begin();
-  update();
+  //update();
   render();
   stats.end();
 }
